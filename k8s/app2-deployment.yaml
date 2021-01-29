@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app2-deployment
+  namespace: app2
+spec:
+  selector:
+    matchLabels:
+      app: app2
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      serviceAccountName: app2-ksa
+      containers:
+      - name: httpd
+        image: httpd:2.4.46
+        ports:
+        - containerPort: 80

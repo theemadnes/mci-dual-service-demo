@@ -1,0 +1,14 @@
+
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: app1-service
+  namespace: app1
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    name: http # adding for Istio
+  selector:
+    app: app1
+  type: ClusterIP

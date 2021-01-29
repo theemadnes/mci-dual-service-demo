@@ -1,0 +1,21 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: app1-vs
+  namespace: app1
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - istio-system/multi-app-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/app1"
+    rewrite:
+      uri: "/" # hit base path to nginx
+    route:
+    - destination:
+        port:
+          number: 80
+        host: app1-service
