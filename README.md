@@ -7,7 +7,7 @@ There are 3 different services that will get deployed across both clusters (2 po
 
 - at the root path (`/`), [whereami](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/tree/master/whereami) is listening
 - at `/app1`, [nginx](https://hub.docker.com/_/nginx) is listening
-- at `/app2`, [httpd]() is listening
+- at `/app2`, [httpd](https://hub.docker.com/_/httpd) is listening
 
 ##
 
